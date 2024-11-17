@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Starting to seed ...."
+names = [ "user1", "user2", "user3", "user4", "user5" ]
+
+names.each do |name|
+  user = User.new
+  user = User.new(
+    username: name,
+    email: "#{name}@example.come",
+    password: "123456",
+    password_confirmation: "123456"
+  )
+  user.save!
+end
+
+puts "Completed seeding."
