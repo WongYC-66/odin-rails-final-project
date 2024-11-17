@@ -13,7 +13,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "users#index"
+
+  # User-related
   resources :users
+
   get "/users/follow/:user_id" => "users#follow"
   get "/users/unfollow/:user_id" => "users#unfollow"
+
+  # Post-related
+  resource :posts, only: [ :show, :create, :new ]
 end
