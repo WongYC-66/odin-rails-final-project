@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get "users/index"
   devise_for :users
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,4 +14,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "users#index"
   resources :users
+  get "/users/follow/:user_id" => "users#follow"
+  get "/users/unfollow/:user_id" => "users#unfollow"
 end

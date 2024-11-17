@@ -2,6 +2,7 @@
 <ul>
     <li><%= user.username %>
     <li><%= user.email %>
+    <%= render partial: "follow", locals: { user: user } %>
 </ul>
 <hr>
 </div>
