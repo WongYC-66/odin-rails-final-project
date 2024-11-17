@@ -14,7 +14,7 @@ names.each do |name|
   user = User.new
   user = User.new(
     username: name,
-    email: "#{name}@example.come",
+    email: "#{name}@example.com",
     password: "123456",
     password_confirmation: "123456"
   )

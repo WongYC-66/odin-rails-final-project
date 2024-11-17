@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  #  https://dev.to/lberge17/building-a-follower-relationship-in-rails-108n
   has_many :followings
 
   # Allows association to view list of users who follow a given user i.e. user.followers
