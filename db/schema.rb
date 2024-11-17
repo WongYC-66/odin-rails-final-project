@@ -15,8 +15,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_17_042654) do
   enable_extension "pg_catalog.plpgsql"
 
   create_table "followings", force: :cascade do |t|
-    t.integer "followee_id"
-    t.integer "follower_id"
+    t.bigint "followee_id"
+    t.bigint "follower_id"
     t.index ["followee_id"], name: "index_followings_on_followee_id"
     t.index ["follower_id"], name: "index_followings_on_follower_id"
   end
