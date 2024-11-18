@@ -6,4 +6,6 @@ class Post < ApplicationRecord
   # Fea : Like post
   has_many :likings
   has_many :liked_users, through: :likings, source: :user
+
+  accepts_nested_attributes_for :comments
 end

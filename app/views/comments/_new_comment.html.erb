@@ -1,0 +1,7 @@
+<%= form_with model: @new_comment do |form| %>
+  <div>
+    <%= form.text_area :contents %>
+  </div>
+  <%= form.hidden_field :post_id, value: post.id %>
+  <%= form.submit %>
+<% end %>

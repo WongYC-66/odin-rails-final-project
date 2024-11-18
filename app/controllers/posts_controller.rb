@@ -15,8 +15,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.includes(:author).all
+    @posts = Post.includes(:author).includes(:comments).all
     @user_liked_posts = current_user.liked_posts
+    @new_comment = Comment.new
   end
 
   private
