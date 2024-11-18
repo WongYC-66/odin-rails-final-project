@@ -48,10 +48,10 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_18_155746) do
 
   create_table "profiles", force: :cascade do |t|
     t.bigint "user_id"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "description"
-    t.string "img_url"
+    t.string "first_name", default: ""
+    t.string "last_name", default: ""
+    t.string "description", default: ""
+    t.string "img_url", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"

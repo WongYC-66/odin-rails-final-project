@@ -1,8 +1,10 @@
-<div>
-<ul>
-    <li><%= user.username %>
-    <li><%= user.email %>
-    <%= render partial: "follow", locals: { user: user } %>
-</ul>
-<hr>
-</div>
+<%= link_to profile_path(user.id) do  %>
+    <div>
+    <ul>
+        <li><%= user.username %>
+        <li><%= user.email %>
+        <%= render partial: "follow", locals: { user: user } %>
+    </ul>
+    <hr>
+    </div>
+<% end %>

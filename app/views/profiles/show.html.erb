@@ -1,2 +1,16 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<h1><%= @profile.user.username %></h1>
+
+<%= image_tag(@profile.img_url) %>
+
+<h3>
+    <span><%= @profile.first_name %></span>
+    <span><%= @profile.last_name %></span>
+</h3>
+
+<p><%= @profile.description %></p>
+
+<% if @profile == current_user.profile %>
+    <%= link_to "Edit", edit_profile_path(@profile) %>
+<% end %>
+
+<%= render @posts %>

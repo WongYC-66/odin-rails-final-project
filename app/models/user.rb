@@ -26,4 +26,12 @@ class User < ApplicationRecord
   # Fea : Like post
   has_many :likings
   has_many :liked_posts, through: :likings, source: :post
+
+  # Callback
+  after_create :create_profile
+
+  private
+    def create_profile
+      Profile.create(user: self)
+    end
 end

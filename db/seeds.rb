@@ -10,8 +10,8 @@
 puts "Starting to seed ...."
 names = [ "user1", "user2", "user3", "user4", "user5" ]
 
+# user
 names.each do |name|
-  user = User.new
   user = User.new(
     username: name,
     email: "#{name}@example.com",
@@ -21,6 +21,17 @@ names.each do |name|
   user.save!
 end
 
+# profile
+names.each do |name|
+  user = User.find_by(username: name)
+  user.profile.update({
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    description: "this is faker generated bio ... "
+  })
+end
+
+# new post
 names.each do |name|
   user = User.find_by(username: name)
   user_new_post = user.posts.new({ contents: "Hi, im #{name}" })

@@ -27,5 +27,5 @@ Rails.application.routes.draw do
 
   # Comment-related
   resources :comments, only: [ :create ]
-  resources :profiles, only: [ :create, :edit, :show, :update ]
+  resources :profiles, only: [ :edit, :show, :update ]
 end
