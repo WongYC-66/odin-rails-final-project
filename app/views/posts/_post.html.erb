@@ -1,6 +1,5 @@
 <div>
-    <h5><%= post.author.username %></h5>
-    <p><%= post.contents %></p>
+    <h5><%= post.author.username %> : <%= post.contents %></h5>
     <%= render partial: "like", locals: { post: post } %>
     
     <%= render partial: "/comments/new_comment", locals: { post: post } %>

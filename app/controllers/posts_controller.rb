@@ -15,7 +15,12 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.includes(:author).includes(:comments).all
+    @posts = Post
+      .where("author_id = ?", current_user.id)
+      .or(Post.where("author_id IN (?)", current_user.followers.pluck(:id)))
+      # .or(Post.where("author_id IN (?)", current_user.followers.map { |user| user.id }))
+      .includes(:author, :liked_users, comments: [ :commentor ])
+
     @user_liked_posts = current_user.liked_posts
     @new_comment = Comment.new
   end
