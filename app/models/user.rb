@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :posts, dependent: :destroy, foreign_key: "author_id"
+  has_many :comments, dependent: :destroy, foreign_key: "commentor_id"
+
   # Fea : Follow user
   #  https://dev.to/lberge17/building-a-follower-relationship-in-rails-108n
   # has_many :followings
@@ -17,8 +20,6 @@ class User < ApplicationRecord
   has_many :followee_relationships, foreign_key: :follower_id, class_name: "Following"
   # has_many :followees, through: :followee_relationships, source: :followee
   has_many :followees, through: :followee_relationships
-
-  has_many :posts, dependent: :destroy, foreign_key: "author_id"
 
   # Fea : Like post
   has_many :likings
