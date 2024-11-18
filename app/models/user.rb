@@ -32,6 +32,21 @@ class User < ApplicationRecord
 
   private
     def create_profile
-      Profile.create(user: self)
+      Profile.create(user: self, img_url: get_avatar_url(self))
+    end
+
+    def get_avatar_url(user)
+      # Assume you manually set the email_address here or get it from user input
+      email = user.email.downcase
+
+      # Create the SHA256 hash
+      hash = Digest::SHA256.hexdigest(email)
+
+      # Compile the full URL with URI encoding for the parameters
+      image_src = "https://www.gravatar.com/avatar/#{hash}"
+
+      # This 'image_src' can now be used in an <img> tag or wherever needed
+      # puts image_src  # Example to output the result
+      image_src
     end
 end

@@ -1,3 +1,6 @@
+require "digest"
+require "uri"
+
 class ProfilesController < ApplicationController
   before_action :get_profile
   def edit
