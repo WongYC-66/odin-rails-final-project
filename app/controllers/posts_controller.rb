@@ -15,7 +15,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:author).all
+    @user_liked_posts = current_user.liked_posts
   end
 
   private

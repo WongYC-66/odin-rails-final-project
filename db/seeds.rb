@@ -21,4 +21,10 @@ names.each do |name|
   user.save!
 end
 
+names.each do |name|
+  user = User.find_by(username: name)
+  user_new_post = user.posts.new({ contents: "Hi, im #{name}" })
+  user_new_post.save!
+end
+
 puts "Completed seeding."

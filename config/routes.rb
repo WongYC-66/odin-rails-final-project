@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 
   # Post-related
   resource :posts, only: [ :show, :create, :new ]
+  get "/likings/like/:post_id" => "likings#like"
+  get "/likings/unlike/:post_id" => "likings#unlike"
 end
