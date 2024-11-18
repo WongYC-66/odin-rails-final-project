@@ -29,7 +29,9 @@
       <p class="alert"><%= alert %></p>
     </div>
 
-    <%= render "/layouts/header" %>
+    <% if current_user %>
+      <%= render "/layouts/header" %>
+    <% end %>
 
     <%= yield %>
   </body>

@@ -21,10 +21,11 @@ Rails.application.routes.draw do
   get "/users/unfollow/:user_id" => "users#unfollow"
 
   # Post-related
-  resource :posts, only: [ :show, :create, :new ]
+  resources :posts, only: [ :show, :create, :new ]
   get "/likings/like/:post_id" => "likings#like"
   get "/likings/unlike/:post_id" => "likings#unlike"
 
   # Comment-related
-  resource :comments, only: [ :create ]
+  resources :comments, only: [ :create ]
+  resources :profiles, only: [ :create, :edit, :show, :update ]
 end
