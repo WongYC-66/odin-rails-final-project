@@ -1,10 +1,10 @@
-<%= link_to profile_path(user.id) do  %>
-    <div>
-    <ul>
+<div>
+<ul>
+    <%= image_tag(user.profile.img_url) %>
+        <%= link_to profile_path(user.id) do  %>
         <li><%= user.username %>
-        <li><%= user.email %>
-        <%= render partial: "follow", locals: { user: user } %>
-    </ul>
-    <hr>
-    </div>
-<% end %>
+    <% end %>
+    <%= render partial: "follow", locals: { user: user } %>
+</ul>
+<hr>
+</div>

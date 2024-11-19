@@ -22,12 +22,14 @@ names.each do |name|
 end
 
 # profile
+rand = Random.new(1234)
 names.each do |name|
   user = User.find_by(username: name)
   user.profile.update({
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    description: "this is faker generated bio ... "
+    description: "this is faker generated bio ... ",
+    img_url: Faker::LoremFlickr.image(size: "75x75", search_terms: [ rand(1000) ])
   })
 end
 

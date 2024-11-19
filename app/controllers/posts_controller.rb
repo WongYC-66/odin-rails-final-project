@@ -19,8 +19,13 @@ class PostsController < ApplicationController
       .where("author_id = ?", current_user.id)
       .or(Post.where("author_id IN (?)", current_user.followers.pluck(:id)))
       # .or(Post.where("author_id IN (?)", current_user.followers.map { |user| user.id }))
-      .includes(:author, :liked_users, comments: [ :commentor ])
-
+      .includes(:liked_users, comments: [ commentor: [ :profile ] ], author: [ :profile ])
+      .order(created_at: :desc) # Orders posts by created_at DESC
+      .map do |post|
+        p post.comments
+        post.comments = post.comments.sort { |a, b| b.created_at <=> a.created_at } # Orders comments within each post by created_at DESC
+        post
+      end
     @user_liked_posts = current_user.liked_posts
     @new_comment = Comment.new
   end

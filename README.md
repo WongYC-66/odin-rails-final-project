@@ -8,8 +8,6 @@ https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project#project
 
 Todo:
 
-- omniauth to github authentication
-
 - upload post with image + Active  Storage
 
 - better faker post with photo
