@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
   def show
     if !@profile
       flash[:notice] = "profile not found"
-      redirect_to root_path
+      return redirect_to root_path
     end
     @posts = @profile.user.posts
     @user_liked_posts = current_user.liked_posts

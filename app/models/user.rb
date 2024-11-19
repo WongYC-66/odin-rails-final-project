@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :timeoutable,
          :omniauthable, omniauth_providers: [ :github ]
 
-  has_one :profile
+  has_one :profile, dependent: :destroy
 
   has_many :posts, dependent: :destroy, foreign_key: "author_id"
   has_many :comments, dependent: :destroy, foreign_key: "commentor_id"
@@ -29,8 +29,9 @@ class User < ApplicationRecord
   has_many :likings
   has_many :liked_posts, through: :likings, source: :post
 
+  # oauth
   def self.from_omniauth(auth)
-    find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
+    user = find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.username = auth.info.name   # assuming the user model has a name
@@ -39,17 +40,23 @@ class User < ApplicationRecord
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
     end
+
+    user.create_or_update_profile(auth.info.image)
+    user
   end
 
-
-  # Callback
-  after_create :create_profile
-
-  private
-    def create_profile
+  def create_or_update_profile(image_url = "")
+    if profile
+      profile.update(img_url: image_url)
+    else
       Profile.create(user: self, img_url: get_avatar_url(self))
     end
+  end
 
+  # Callback
+  after_create :create_or_update_profile
+
+  private
     def get_avatar_url(user)
       # Assume you manually set the email_address here or get it from user input
       email = user.email.downcase
