@@ -97,9 +97,13 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    childprocess (5.1.0)
+      logger (~> 1.5)
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     crass (1.0.6)
+    cssbundling-rails (1.4.1)
+      railties (>= 6.0.0)
     date (3.4.0)
     debug (1.9.2)
       irb (~> 1.10)
@@ -158,6 +162,11 @@ GEM
       thor (~> 1.3)
       zeitwerk (>= 2.6.18, < 3.0)
     language_server-protocol (3.17.0.3)
+    launchy (3.0.1)
+      addressable (~> 2.8)
+      childprocess (~> 5.0)
+    letter_opener (1.10.0)
+      launchy (>= 2.2, < 4)
     logger (1.6.1)
     loofah (2.23.1)
       crass (~> 1.0.2)
@@ -358,6 +367,15 @@ GEM
     stimulus-rails (1.3.4)
       railties (>= 6.0.0)
     stringio (3.1.2)
+    tailwindcss-rails (3.0.0)
+      railties (>= 7.0.0)
+      tailwindcss-ruby
+    tailwindcss-ruby (3.4.15)
+    tailwindcss-ruby (3.4.15-aarch64-linux)
+    tailwindcss-ruby (3.4.15-arm-linux)
+    tailwindcss-ruby (3.4.15-arm64-darwin)
+    tailwindcss-ruby (3.4.15-x86_64-darwin)
+    tailwindcss-ruby (3.4.15-x86_64-linux)
     thor (1.3.2)
     thruster (0.1.9)
     thruster (0.1.9-aarch64-linux)
@@ -409,6 +427,7 @@ DEPENDENCIES
   bootsnap
   brakeman
   capybara
+  cssbundling-rails
   debug
   devise (~> 4.9)
   dotenv
@@ -416,6 +435,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  letter_opener
   omniauth
   omniauth-github (~> 2.0.0)
   omniauth-rails_csrf_protection
@@ -429,6 +449,7 @@ DEPENDENCIES
   solid_cache
   solid_queue
   stimulus-rails
+  tailwindcss-rails (~> 3.0)
   thruster
   turbo-rails
   tzinfo-data

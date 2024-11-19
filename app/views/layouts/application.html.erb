@@ -18,21 +18,34 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body>
+  <body class="bg-gray-800 text-white">
+    <div class="container max-w-none flex items-center flex-col w-lvw h-svh m-auto">
+      <section class="flash-msg mt-4">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </section>
 
-    <div class="flash-msg">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <section class="header mt-4">
+        <% if current_user %>
+          <%= render "/layouts/header" %>
+        <% else %>
+          <h1>My Rails Final Project Site</h1>
+        <% end %>
+      </section>
+      
+      <section class="main flex-1 mt-4">
+        <%= yield %>
+      </section>
+
+      <footer class="main bg-black w-screen text-center">
+        <p>Created by YC Wong @2024</p>
+      </footer>
     </div>
-
-    <% if current_user %>
-      <%= render "/layouts/header" %>
-    <% end %>
-
-    <%= yield %>
   </body>
 </html>

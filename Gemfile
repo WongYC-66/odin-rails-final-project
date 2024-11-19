@@ -68,6 +68,13 @@ gem "dotenv", groups: [ :development, :test ]
 
 gem "faker"
 
+# Oauth
 gem "omniauth"
 gem "omniauth-github", "~> 2.0.0"
 gem "omniauth-rails_csrf_protection"
+
+# Mailer
+gem "letter_opener", group: :development
+
+gem "tailwindcss-rails", "~> 3.0"
+gem "cssbundling-rails"
