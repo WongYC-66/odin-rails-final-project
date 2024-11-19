@@ -10,8 +10,6 @@ Todo:
 
 - upload post with image + Active  Storage
 
-- better faker post with photo
-
 - mailer
 
 - style it up

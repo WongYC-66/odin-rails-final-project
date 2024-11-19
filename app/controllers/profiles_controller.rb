@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
 
   private
     def edit_params
-      params.expect(profile: [ :first_name, :last_name, :description, :img_url ])
+      params.expect(profile: [ :first_name, :last_name, :description, :img_url, :uploaded_image ])
     end
 
     def get_profile

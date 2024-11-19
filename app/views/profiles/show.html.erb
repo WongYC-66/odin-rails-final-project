@@ -1,6 +1,6 @@
 <h1><%= @profile.user.username %></h1>
 
-<%= image_tag(@profile.img_url) %>
+<%= render partial: "profile_picture" , locals:{ profile: @profile} %>
 
 <h3>
     <span><%= @profile.first_name %></span>

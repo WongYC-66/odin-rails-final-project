@@ -1,6 +1,6 @@
 <div>
 <ul>
-    <%= image_tag(user.profile.img_url) %>
+    <%= render partial: "/profiles/profile_picture" , locals:{profile: user.profile} %>
         <%= link_to profile_path(user.id) do  %>
         <li><%= user.username %>
     <% end %>

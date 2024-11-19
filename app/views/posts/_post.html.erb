@@ -1,7 +1,7 @@
 <div>
     <h5>
         <%= link_to profile_path(post.author.id) do  %>
-            <%= image_tag(post.author.profile.img_url) %>
+            <%= render partial: "/profiles/profile_picture" , locals:{profile: post.author.profile} %>
             <%= post.author.username %> 
         <% end %>
 

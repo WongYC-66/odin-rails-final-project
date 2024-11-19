@@ -1,7 +1,8 @@
 <div>
     <%= link_to profile_path(comment.commentor.id) do  %>
-            <%= image_tag(comment.commentor.profile.img_url) %>
-            <%= comment.commentor.username %> 
+        <%= render partial: "/profiles/profile_picture" , locals:{profile: comment.commentor.profile} %>
+        <%#= image_tag(comment.commentor.profile.img_url) %>
+        <%= comment.commentor.username %> 
     <% end %>
     :
     <%= comment.contents %>
