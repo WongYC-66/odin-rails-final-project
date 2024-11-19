@@ -8,8 +8,13 @@
     
     : <%= post.contents %>
     </h5>
-    <%= render partial: "/posts/like", locals: { post: post } %>
     
+    <% if post.post_image.persisted? %>
+        <%= image_tag post.post_image %>
+    <% end %>
+
+
+    <%= render partial: "/posts/like", locals: { post: post } %>
     <%= render partial: "/comments/new_comment", locals: { post: post } %>
     <%= render post.comments.order(created_at: :desc) %>
 </div>
