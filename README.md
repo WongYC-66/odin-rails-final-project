@@ -40,9 +40,10 @@ Repo:
 1. cd odin-rails-final-project
 1. bundle install
 1. Create .env file like .env-sample
-1. db:migrate
-1. db:seed
-1. rails s
+1. rails db:migrate:reset
+1. rails db:seed
+1. rails tailwindcss:install
+1. ./bin/dev
 1. visit at http://localhost:3000
 
 ## Todo:
