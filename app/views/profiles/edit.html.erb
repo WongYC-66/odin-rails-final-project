@@ -1,7 +1,7 @@
 <h5 class="font-bold">Edit own profile</h5>
 
 <%= form_with model: @profile do |form| %>
-  <div class="flex flex-col space-y-4 text-black">
+  <div class="flex flex-col space-y-4 text-slate-800">
     <div>
       <%= form.label :first_name, class: "text-white" %>
       <%= form.text_field :first_name %>
@@ -19,7 +19,7 @@
       <%= form.text_field :img_url %>
     </div>
     <div>
-      <%= form.label :uploaded_image, class: "text-white" %>
+      <%= form.label :uploaded_image, "Profile Image", class: "text-white" %>
       <%= form.file_field :uploaded_image, class: "text-white"  %>
     </div>
 

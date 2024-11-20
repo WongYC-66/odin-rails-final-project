@@ -1,18 +1,16 @@
-<h1>New Post</h1>
+<h5 class="font-bold">New Post</h5>
 
 <%= form_with model: @post do |form| %>
   <div>
-    <%= form.label :contents %>
-    <br>
-    <%= form.text_area :contents %>
+    <%= form.text_area :contents, class: "text-slate-800 w-full border border-gray-300 rounded p-2 resize-none" %>
   </div>
 
-
-  <div>
-    <%= form.label :post_image %>
+  <div class="my-4">
+    <%= form.label :post_image, "Image" %>
     <%= form.file_field :post_image %>
   </div>
   
-  <br>
-  <%= form.submit %>
+  <%= form.submit "Post", class: "bg-blue-500 w-full  text-white px-2 py-1 rounded hover:bg-blue-600 focus:outline-none" %>
+
+  
 <% end %>

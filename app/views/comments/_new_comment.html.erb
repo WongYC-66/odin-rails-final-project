@@ -9,7 +9,7 @@
 
   <%= form_with model: @new_comment do |form| %>
     <div class="flex items-center space-x-2">
-      <%= form.text_area :contents, class:"text-black border border-gray-300 rounded px-2 py-1 h-8 resize-none w-full", 
+      <%= form.text_area :contents, class:"text-slate-800 border border-gray-300 rounded px-2 py-1 h-8 resize-none w-full", 
         rows: 1 %>
       <%= form.submit "send", class: "bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 focus:outline-none" %>
     </div>
