@@ -1,6 +1,8 @@
-<%# <h1>Posts#index</h1> %>
-<% if @posts.length > 0 %>
-    <%= render @posts %>
-<% else %>
-    <p>No post at the moment, please make a new post or follow other users to see their post</p>
-<% end %>
+<div class="w-96 py-4">
+    <% if @posts.length > 0 %>
+        <%= render @posts %>
+    <% else %>
+        <p>No post at the moment, please make a new post or follow other users to see their post</p>
+    <% end %>
+
+<div>

@@ -26,26 +26,28 @@
 
   <body class="bg-gray-800 text-white">
     <div class="container max-w-none flex items-center flex-col w-lvw h-svh m-auto">
+
       <section class="flash-msg mt-4">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
       </section>
 
-      <section class="header mt-4">
+      <header class="mt-4">
         <% if current_user %>
           <%= render "/layouts/header" %>
         <% else %>
           <h1>My Rails Final Project Site</h1>
         <% end %>
-      </section>
+      </header>
       
-      <section class="main flex-1 mt-4">
+      <main class="flex-1 mt-4">
         <%= yield %>
-      </section>
+      </main>
 
-      <footer class="main bg-black w-screen text-center">
+      <footer class="bg-slate-900 w-screen text-center">
         <p>Created by YC Wong @2024</p>
       </footer>
+      
     </div>
   </body>
 </html>

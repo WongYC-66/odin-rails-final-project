@@ -1,11 +1,11 @@
 <% if @user_followers.any? {|follower| follower.id == user.id} %>
     <%# already, show unfollow %>
     <%= form_with url: "/users/unfollow/#{user.id}", method: :get do |form| %>
-        <%= form.submit "unFollow", name:nil %>
+        <%= form.submit "unFollow", name:nil, class: "bg-red-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none" %>
     <% end %>
 <% else %>
     <%# show follow %>
     <%= form_with url: "/users/follow/#{user.id}", method: :get do |form| %>
-        <%= form.submit "Follow", name:nil %>
+        <%= form.submit "Follow", name:nil, class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none" %>
     <% end %>
 <% end %>

@@ -1,10 +1,10 @@
-<div>
-<ul>
-    <%= render partial: "/profiles/profile_picture" , locals:{profile: user.profile} %>
-        <%= link_to profile_path(user.id) do  %>
-        <li><%= user.username %>
+<div class="flex items-center gap-24 my-6 min-w-full ">
+
+    <%= link_to profile_path(user.id) do  %>
+        <div class="flex justify-center items-center gap-6">
+        <%= render partial: "/profiles/profile_picture" , locals:{profile: user.profile} %>
+        <%= user.username %>
+        </div>
     <% end %>
     <%= render partial: "follow", locals: { user: user } %>
-</ul>
-<hr>
 </div>
