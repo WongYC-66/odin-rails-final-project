@@ -7,7 +7,7 @@ This is a clone of social media website. This is part of project along [TheOdinP
 ![photo](rails_final_project.png)
 
 Live DEMO : 
-- Full Stack Ruby on Rails : 
+- Full Stack Ruby on Rails : https://odin-rails-final-project.onrender.com/
 
 Current feature:
 - basic Create & Read of Posts
