@@ -1,8 +1,7 @@
 <!-- GETTING STARTED -->
 ## About Rails Final Project / Mini-Social-Media
 
-This is a clone of social media website. This is part of project along <a href='
-https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project'>TheOdinProject course</a>.
+This is a clone of social media website. This is part of project along [TheOdinProject course](https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project)
 
 <!-- Todo -->
 ![photo](rails_final_project.png)
