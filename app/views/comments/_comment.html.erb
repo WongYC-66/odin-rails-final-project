@@ -1,9 +1,14 @@
-<div>
-    <%= link_to profile_path(comment.commentor.id) do  %>
-        <%= render partial: "/profiles/profile_picture" , locals:{profile: comment.commentor.profile} %>
-        <%#= image_tag(comment.commentor.profile.img_url) %>
-        <%= comment.commentor.username %> 
-    <% end %>
-    :
-    <%= comment.contents %>
+<div class="my-2 flex space-x-2 min-w-full">
+    <div>
+        <%= link_to profile_path(comment.commentor.id) do  %>
+            <%= render partial: "/profiles/profile_picture" , locals:{profile: comment.commentor.profile} %>
+        <% end %>
+    </div>
+
+    <div>
+        <%= link_to profile_path(comment.commentor.id) do  %>
+            <%= comment.commentor.username %> 
+        <% end %>
+        <p class="ps-2"><%= comment.contents %></p>
+    </div>
 </div>

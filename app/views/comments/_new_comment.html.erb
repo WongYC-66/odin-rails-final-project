@@ -1,7 +1,19 @@
-<%= form_with model: @new_comment do |form| %>
-  <div>
-    <%= form.text_area :contents %>
-  </div>
-  <%= form.hidden_field :post_id, value: post.id %>
-  <%= form.submit %>
-<% end %>
+<div class="my-2 flex items-center space-x-2">
+
+  <%= link_to profile_path(post.author.id) do  %>
+      <div class="flex items-center gap-5">
+      <%= render partial: "/profiles/profile_picture" , locals:{profile: current_user.profile} %>
+      </div>
+  <% end %>
+
+
+  <%= form_with model: @new_comment do |form| %>
+    <div class="flex items-center space-x-2">
+      <%= form.text_area :contents, class:"text-black border border-gray-300 rounded px-2 py-1 h-8 resize-none w-full", 
+        rows: 1 %>
+      <%= form.submit "send", class: "bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 focus:outline-none" %>
+    </div>
+
+    <%= form.hidden_field :post_id, value: post.id %>
+  <% end %>
+</div>

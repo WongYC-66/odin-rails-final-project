@@ -1,11 +1,13 @@
+<div class="my-2">
 <% if @user_liked_posts.any? {|liked_post| liked_post == post} %>
     <%# already, show unlike %>
     <%= form_with url: "/likings/unlike/#{post.id}", method: :get do |form| %>
-        <%= form.submit "unLike #{post.liked_users.length}", name:nil %>
+        <%= form.submit "unLike #{post.liked_users.length}", name:nil, class: "bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600 focus:outline-none" %>
     <% end %>
 <% else %>
     <%# show like %>
     <%= form_with url: "/likings/like/#{post.id}", method: :get do |form| %>
-        <%= form.submit "Like #{post.liked_users.length}", name:nil %>
+        <%= form.submit "Like #{post.liked_users.length}", name:nil, class: "bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 focus:outline-none" %>
     <% end %>
 <% end %>
+</div>

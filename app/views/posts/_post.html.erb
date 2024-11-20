@@ -1,20 +1,25 @@
-<div>
-    <h5>
-        <%= link_to profile_path(post.author.id) do  %>
-            <%= render partial: "/profiles/profile_picture" , locals:{profile: post.author.profile} %>
-            <%= post.author.username %> 
-        <% end %>
+<div class="bg-slate-500 my-4 p-4 rounded-3xl">
+
+    <%= link_to profile_path(post.author.id) do  %>
+        <div class="flex items-center gap-5">
+        <%= render partial: "/profiles/profile_picture" , locals:{profile: post.author.profile} %>
+        <%= post.author.username %> 
+        </div>
+    <% end %>
 
     
-    : <%= post.contents %>
-    </h5>
-    
-    <% if post.post_image.persisted? %>
-        <%= image_tag post.post_image %>
-    <% end %>
+    <p class="ps-2 pb-2 mt-2">
+        <%= post.contents %>
+
+        <% if post.post_image.persisted? %>
+            <%= image_tag post.post_image, class: "rounded-lg" %>
+        <% end %>
+    </p>
 
 
     <%= render partial: "/posts/like", locals: { post: post } %>
+
     <%= render partial: "/comments/new_comment", locals: { post: post } %>
+
     <%= render post.comments.order(created_at: :desc) %>
 </div>

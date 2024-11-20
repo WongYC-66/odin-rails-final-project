@@ -1,5 +1,5 @@
 <% if profile.uploaded_image.persisted? %>
-    <%= image_tag(profile.uploaded_image) %>
+    <%= image_tag(profile.uploaded_image, class: "rounded-full border-2 border-gray-300 shadow-lg min-w-16 h-16") %>
 <% else %>
-    <%= image_tag(profile.img_url, class: "rounded-full border-2 border-gray-300 shadow-lg w-16 h-16") %>
+    <%= image_tag(profile.img_url, class: "rounded-full border-2 border-gray-300 shadow-lg min-w-16 h-16") %>
 <% end %>
