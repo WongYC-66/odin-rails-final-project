@@ -3,7 +3,10 @@ class CommentsController < ApplicationController
     post = Post.find_by(id: params[:comment]["post_id"])
     new_comment = post.comments.new(comment_params)
     new_comment.commentor = current_user
-    new_comment.save!
+
+    if !new_comment.save
+      flash[:alert] = "Something went wrong"
+    end
 
     redirect_to root_path
   end

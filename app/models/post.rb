@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  validates :contents, length: { minimum: 1 }
+
   belongs_to :author, class_name: "User"
 
   has_many :comments, dependent: :destroy

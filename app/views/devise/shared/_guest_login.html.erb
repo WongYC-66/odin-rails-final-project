@@ -1,0 +1,17 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.email_field :email, value:"guest@example.com", hidden: true %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password, value:"123456", hidden: true %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me, checked: true, hidden: true %>
+    </div>
+  <% end %>
+
+  <%= f.submit "Guest Sign in", class: "bg-blue-500 min-w-full text-white px-2 py-1 rounded hover:bg-blue-600 focus:outline-none" %>
+<% end %>
