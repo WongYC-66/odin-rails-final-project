@@ -5,7 +5,7 @@ This is a clone of social media website. This is part of project along <a href='
 https://www.theodinproject.com/lessons/ruby-on-rails-rails-final-project'>TheOdinProject course</a>.
 
 <!-- Todo -->
-![photo](threads-clone.png)
+![photo](rails_final_project.png)
 
 Live DEMO : 
 - Full Stack Ruby on Rails : 
@@ -33,11 +33,11 @@ Repo:
 
 ### Prerequisite:
 1. Have postgreSQL, Ruby, Rails installed
-1. Register an Outh app at Github, and get CLIENT_ID and CLIENT_SECRET from https://github.com/settings/developers 
-1. Register an account at supabase to store uploaded image from https://supabase.com/, to get SUPABASE_PROJECT_URL and SUPABASE_API_KEY 
+1. Register an Outh app at Github, and get CLIENT_ID and CLIENT_SECRET from https://github.com/settings/developers
 
 ### Installation 
 1. Clone the repo
+1. cd odin-rails-final-project
 1. bundle install
 1. Create .env file like .env-sample
 1. db:migrate
