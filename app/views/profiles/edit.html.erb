@@ -3,19 +3,19 @@
 <%= form_with model: @profile do |form| %>
   <div class="flex flex-col space-y-4 text-slate-800">
     <div>
-      <%= form.label :first_name, class: "text-white" %>
+      <%= form.label :first_name, class: "text-white" %><br>
       <%= form.text_field :first_name %>
     </div>
     <div>
-      <%= form.label :last_name, class: "text-white" %>
+      <%= form.label :last_name, class: "text-white" %><br>
       <%= form.text_field :last_name %>
     </div>
     <div>
-      <%= form.label :description, class: "text-white" %>
+      <%= form.label :description, class: "text-white" %><br>
       <%= form.text_area :description %>
     </div>
     <div>
-      <%= form.label :img_url, class: "text-white" %>
+      <%= form.label :img_url, class: "text-white" %><br>
       <%= form.text_field :img_url %>
     </div>
     <div>
