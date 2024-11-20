@@ -41,7 +41,6 @@ Repo:
 1. Create .env file like .env-sample
 1. rails db:migrate:reset
 1. rails db:seed
-1. rails tailwindcss:install
 1. ./bin/dev
 1. visit at http://localhost:3000
 
