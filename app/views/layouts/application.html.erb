@@ -28,8 +28,8 @@
     <div class="container max-w-none flex items-center flex-col w-lvw h-svh m-auto">
 
       <section class="flash-msg mt-4">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <p class="notice text-green-500 font-bold"><%= notice %></p>
+        <p class="alert text-yellow-300 font-bold"><%= alert %></p>
       </section>
 
       <header class="mt-4">
@@ -40,7 +40,7 @@
         <% end %>
       </header>
       
-      <main class="flex-1 mt-4">
+      <main class="flex-1 mt-4 w-96 py-4">
         <%= yield %>
       </main>
 

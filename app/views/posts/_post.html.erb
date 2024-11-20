@@ -3,7 +3,7 @@
     <%= link_to profile_path(post.author.id) do  %>
         <div class="flex items-center gap-5">
         <%= render partial: "/profiles/profile_picture" , locals:{profile: post.author.profile} %>
-        <%= post.author.username %> 
+        <h5 class="font-bold"><%= post.author.username%> </h5>
         </div>
     <% end %>
 

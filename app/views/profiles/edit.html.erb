@@ -1,25 +1,29 @@
-<h1>Edit own profile</h1>
+<h5 class="font-bold">Edit own profile</h5>
 
 <%= form_with model: @profile do |form| %>
-  <div>
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+  <div class="flex flex-col space-y-4 text-black">
+    <div>
+      <%= form.label :first_name, class: "text-white" %>
+      <%= form.text_field :first_name %>
+    </div>
+    <div>
+      <%= form.label :last_name, class: "text-white" %>
+      <%= form.text_field :last_name %>
+    </div>
+    <div>
+      <%= form.label :description, class: "text-white" %>
+      <%= form.text_area :description %>
+    </div>
+    <div>
+      <%= form.label :img_url, class: "text-white" %>
+      <%= form.text_field :img_url %>
+    </div>
+    <div>
+      <%= form.label :uploaded_image, class: "text-white" %>
+      <%= form.file_field :uploaded_image, class: "text-white"  %>
+    </div>
+
+    <%= form.submit "Update", class: "bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 focus:outline-none" %>
+    
   </div>
-  <div>
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-  <div>
-    <%= form.label :img_url %>
-    <%= form.text_field :img_url %>
-  </div>
-  <div>
-    <%= form.label :uploaded_image %>
-    <%= form.file_field :uploaded_image %>
-  </div>
-  <%= form.submit %>
 <% end %>

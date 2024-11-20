@@ -7,7 +7,9 @@
 
     <div>
         <%= link_to profile_path(comment.commentor.id) do  %>
-            <%= comment.commentor.username %> 
+            
+            <h5 class="font-bold"><%= comment.commentor.username %></h5>
+
         <% end %>
         <p class="ps-2"><%= comment.contents %></p>
     </div>

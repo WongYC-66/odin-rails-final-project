@@ -1,4 +1,4 @@
-<h1><%= @profile.user.username %></h1>
+<h5 class="font-bold"><%= @profile.user.username %></h5>
 
 <%= render partial: "profile_picture" , locals:{ profile: @profile} %>
 
@@ -7,10 +7,10 @@
     <span><%= @profile.last_name %></span>
 </h3>
 
-<p><%= @profile.description %></p>
+<p class="my-4"><%= @profile.description %></p>
 
 <% if @profile == current_user.profile %>
-    <%= link_to "Edit", edit_profile_path(@profile) %>
+    <%= link_to "Edit", edit_profile_path(@profile), class: "bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600 focus:outline-none" %>
 <% end %>
 
 <%= render @posts %>

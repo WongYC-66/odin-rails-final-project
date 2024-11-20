@@ -3,6 +3,7 @@ class Profile < ApplicationRecord
   has_one_attached :uploaded_image
 
   validate :acceptable_image
+  validates :img_url, length: { minimum: 2 }
 
 
   def acceptable_image

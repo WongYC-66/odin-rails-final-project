@@ -5,14 +5,14 @@ class ProfilesController < ApplicationController
   before_action :get_profile
   def edit
     if @profile != current_user.profile
-      flash[:notice] = "Un-authorized"
+      flash[:alert] = "Un-authorized"
       redirect_to root_path
     end
   end
 
   def show
     if !@profile
-      flash[:notice] = "profile not found"
+      flash[:alert] = "profile not found"
       return redirect_to root_path
     end
     @posts = @profile.user.posts
@@ -24,7 +24,7 @@ class ProfilesController < ApplicationController
     if @profile.update(edit_params)
       redirect_to profile_path(@profile)
     else
-      flash[:notice] = "something went wrong"
+      flash[:alert] = "something went wrong"
       render :edit, status: :unprocessable_entity
     end
   end
