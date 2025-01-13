@@ -76,5 +76,5 @@ gem "omniauth-rails_csrf_protection"
 # Mailer
 gem "letter_opener", group: :development
 
-gem "tailwindcss-rails", "~> 3.0"
+gem "tailwindcss-rails", "~> 3.2"
 gem "cssbundling-rails"
